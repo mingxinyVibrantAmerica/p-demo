@@ -1,7 +1,5 @@
 <template>
   <div class="tile">
-    {{xIndex}}
-    {{yIndex}}
     {{content}}
   </div>
 </template>

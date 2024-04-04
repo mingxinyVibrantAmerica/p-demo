@@ -8,9 +8,20 @@
 <script setup>
 import ViewPort from './gameEngine/ViewPort.vue';
 import GameEngine from "./Service/GameEngine.js";
-import { onBeforeMount } from 'vue';
+import { onMounted, onBeforeMount } from 'vue';
 onBeforeMount(() => {
+  window.removeEventListener('keydown', handleGlobalKeyDown);
   GameEngine.init();
+});
+
+const handleGlobalKeyDown = (event) => {
+  event.stopPropagation();
+  GameEngine.handleKey(event.key);
+  console.log('Global key press:', event.key);
+};
+
+onMounted(() => {
+  window.addEventListener('keydown', handleGlobalKeyDown);
 });
 </script>
 

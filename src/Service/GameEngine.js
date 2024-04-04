@@ -16,9 +16,11 @@ export const GameEngine = reactive({
             this.map.push(row);
         }
         this.map[5][5] = 1;
+    },
+
+    handleKey(key) {
+        console.log(key);
     }
-
-
 })
 
 export default GameEngine;
