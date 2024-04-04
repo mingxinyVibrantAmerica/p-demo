@@ -2,3 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tile {
+    height: 48px;
+    width: 48px;
+    border: solid black;
+}
